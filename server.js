@@ -3,7 +3,7 @@ const Bodyparser=require('body-parser');
 const Cors=require('cors');
 const knex =require('knex');
 const bcrypt =require('bcryptjs');
-const { password } = require('pg/lib/defaults');
+
 
 
 
@@ -48,7 +48,9 @@ app.use(Cors());
 
 
 
-
+app.get('/',(req,res)=>{
+    res.json('its working');
+})
 
 app.post('/register',(req,res)=>{
     const {name,email,password}=req.body;
@@ -133,4 +135,4 @@ app.put('/image',(req,res)=>{
 
 
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
