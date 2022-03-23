@@ -49,7 +49,7 @@ app.use(Cors());
 
 
 app.get('/',(req,res)=>{
-    res.json('its working');
+    res.send('its working');
 })
 
 app.post('/register',(req,res)=>{
