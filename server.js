@@ -10,35 +10,15 @@ const bcrypt =require('bcryptjs');
 const db=knex({
     client: 'pg',
     connection: {
-      host : '127.0.0.1',
-      port : 5432,
-      user : 'postgres',
-      password : 'test',
-      database : 'smart-brain'
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
     }
   });
 
 
 
-let database ={users:[
-    {
-        id:"120",
-        name:"amy",
-        email:"amy@gmail.com",
-        password:"cookies",
-        entries:0,
-        joined: new Date()        
-    },
-    {
-        id:"121",
-        name:"jack",
-        email:"jack@gmail.com",
-        password:"bananas",
-        entries:0,
-        joined: new Date()        
-    }
-    
-]}
 
 
 
